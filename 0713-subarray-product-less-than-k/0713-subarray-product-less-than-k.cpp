@@ -15,7 +15,7 @@ public:
         //     }
         // }
         // return ans;
-         int ans = 0;
+    int ans = 0;
     int product = 1;
     int left = 0;
 
