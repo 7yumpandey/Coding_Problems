@@ -17,8 +17,8 @@ public:
         if(a!=b){
             return false;
         }
-        for (auto it = mp1.begin(); it != mp1.end(); ++it) {
-        char key = it->first;
+        for (auto x:mp1) {
+        char key =x.first;
         if (mp2.find(key) == mp2.end() || mp1[key] != mp2[key]) {
             return false;
         }
