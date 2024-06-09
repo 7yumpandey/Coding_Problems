@@ -11,7 +11,7 @@ public:
             else{
                 f++;
             }
-            maxfreq=max({maxfreq,t,f});
+            maxfreq=max(t,f);
             int changes=(right-left)+1-maxfreq;
             //right will tell the length of current subarray and the allowed changes can calculated jada wala char minus kar ke
             if(changes<=k){
