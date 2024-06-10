@@ -19,16 +19,11 @@ public:
 //         }
 //         return ans;
         
-        map<char,int>mp;int ans=0;
+        vector<int>charstore(3,-1);int ans=0;
         for(int i=0;i<s.size();i++){
-            mp[s[i]]=i;
-            if(mp.size()==3){
-                int mini=INT_MAX;
-                for(auto x:mp){
-                    if(x.second<mini){
-                        mini=x.second;
-                    }
-                }
+            charstore[s[i]-'a']=i;
+            if(min({charstore[0],charstore[1],charstore[2]})!=-1){
+                int mini=min({charstore[0],charstore[1],charstore[2]});
                 ans+=mini+1;
             }
         }
