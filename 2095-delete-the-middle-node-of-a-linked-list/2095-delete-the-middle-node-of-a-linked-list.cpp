@@ -27,6 +27,7 @@ public:
             len=len+1;
             if(len==mid&&temp2->next){
                 temp2->next=temp2->next->next;
+                break;
             }
             temp2=temp2->next;
         }
