@@ -11,10 +11,11 @@
 class Solution {
 public:
     int length(ListNode*head){
-        int count=0;
+        ListNode* curr=head;
+       int count=0;
         while(head){
-            count++;
             head=head->next;
+            count++;
         }
         return count;
     }
@@ -22,18 +23,19 @@ public:
         if(head==NULL||head->next==NULL){
             return head;
         }
-        if(length(head)<k){
+        int len=length(head);
+        if(len<k){
             return head;
         }
-        ListNode *curr=head;
-        ListNode* prev=NULL,*next=NULL;
+        ListNode* curr=head;
+        ListNode* prev=NULL;
+        ListNode* next=NULL;
         int count=k;
-        while(curr&&count){
+        while(curr&&count--){
             next=curr->next;
             curr->next=prev;
-            prev= curr;
+            prev=curr;
             curr=next;
-            count--;
         }
         head->next=reverseKGroup(curr,k);
         return prev;
