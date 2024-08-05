@@ -1,13 +1,9 @@
 class Solution {
 public:
-   
     void rotate(vector<int>& nums, int k) {
-         k=k%nums.size();
-       int d=(nums.size()-k);
-
-        reverse(nums.begin(),nums.begin()+d);
-        reverse(nums.begin()+d,nums.end());
+        k=k%nums.size();
+        reverse(nums.begin(),nums.begin()+nums.size()-k);
+        reverse(nums.begin()+nums.size()-k,nums.end());
         reverse(nums.begin(),nums.end());
-        
     }
 };
