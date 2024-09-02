@@ -18,16 +18,22 @@ public:
         if(root->val==val){
             return  root;
         }
-        TreeNode* left=searchBST(root->left,val);
-        TreeNode* right=searchBST(root->right,val);
-        if(left){
-            return left;
-        }
-        else if(right){
-            return right;
+        if(root->val>val){
+            return searchBST(root->left,val);
         }
         else{
-            return NULL;
+            return searchBST(root->right,val);
         }
+        // TreeNode* left=searchBST(root->left,val);
+        // TreeNode* right=searchBST(root->right,val);
+        // if(left){
+        //     return left;
+        // }
+        // else if(right){
+        //     return right;
+        // }
+        // else{
+        //     return NULL;
+        // }
     }
 };
