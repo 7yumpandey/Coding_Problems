@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int maxProfit(vector<int>& prices) {
+    int maxProfit(vector<int>& arr) {
 //         int ans=0;
 //         int n=prices.size();
 //         int mindayind=0;
@@ -19,11 +19,14 @@ public:
             
 //         }
 //         return ans;
-        int ans=0,mini=prices[0];
-        for(int i=0;i<prices.size();i++){
-            int cost=prices[i]-mini;
-            ans=max(ans,cost);
-            mini=min(mini,prices[i]);
+        int ans=0;
+        int mini=arr[0];
+        for(int i=0;i<arr.size();i++){
+            int cost=arr[i]-mini;
+            if(cost>ans){
+                ans=cost;
+            }
+            mini=min(mini,arr[i]);
         }
         return ans;
     }
